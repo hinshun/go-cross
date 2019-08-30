@@ -19,4 +19,4 @@ export LDFLAGS_STATIC_DOCKER='-extld='${CC}
 TARGET="${GOPATH}/bin/$NAME-$GOOS-$GOARCH"
 
 echo "Building $TARGET"
-go build -buildmode="${BUILDMODE}" -o "${TARGET}" -tags pkcs11 -ldflags "${LDFLAGS}" "${SOURCE}"
+go build -buildmode="${BUILDMODE}" -o "${TARGET}" -tags pkcs11 -ldflags "${LDFLAGS}" -gcflags "${GCFLAGS}" -asmflags "${ASMFLAGS}" "${SOURCE}"

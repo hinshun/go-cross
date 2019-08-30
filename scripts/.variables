@@ -6,6 +6,16 @@ export LDFLAGS="\
     ${LDFLAGS:-} \
 "
 
+export GCFLAGS="\
+    all=-trimpath=${GOPATH} \
+    ${GCFLAGS:-} \
+"
+
+export ASMFLAGS="\
+    all=-trimpath=${GOPATH} \
+    ${ASMFLAGS:-} \
+"
+
 GOOS="${GOOS:-$(go env GOHOSTOS)}"
 GOARCH="${GOARCH:-$(go env GOHOSTARCH)}"
 BUILDMODE="${BUILDMODE:-default}"
